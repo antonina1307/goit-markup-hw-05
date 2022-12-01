@@ -88,6 +88,9 @@ a.header-logo {
   letter-spacing: 0.03em;
   color: #212121;
   text-decoration: none; 
+  transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav:hover,
 .site-nav:focus, 
@@ -111,6 +114,9 @@ a.link-page-mail {
 .address-list-item{
   color: #757575;
   fill: #757575;
+  transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-list-item:hover,
 .address-list-item:focus{
@@ -197,6 +203,7 @@ a.link-page-mail {
 
 .visually-hidden {
   position: absolute;
+  content: "";
   width: 1px;
   height: 1px;
   margin: 1px;
@@ -266,6 +273,36 @@ display: flex;
 }
 .work-item:not(:last-child){
   margin-right: 30px;
+}
+.work-item{
+  position: relative;
+}
+
+.sub-work-item{
+  position: absolute;
+  content: "";
+  width: 370px;
+  height: 70px;
+  color: var(--primary-white-color);
+  background: rgba(47, 48, 58, 0.8);
+  padding: 30px;
+  left:0;
+  bottom: 0;
+  align-items: center;   
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: none;
+ 
+  
+}
+.work-item:hover .sub-work-item {
+  display: block;
+
+  
 }
 .section-about-team {
 background: #F5F4FA;
@@ -342,6 +379,9 @@ background: #F5F4FA;
   border: 1px solid #AFB1B8;
   color: #AFB1B8;
   padding: 16px 32px;
+  transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-customers:hover,
 .link-customers:focus {
@@ -371,6 +411,9 @@ background: #F5F4FA;
   width: 44px;
   height: 44px;
   padding: 12px;
+  transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icons-item:not(:last-child){
   margin-right: 10px;
@@ -440,7 +483,10 @@ margin-bottom: 15px;
 
 .footer-section .icons-link {
   color: #fff;
-  background-color: #43444D; 
+  background-color: #43444D;
+  transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-section .icons-item:not(:last-child){
   margin-right: 10px;
@@ -483,6 +529,9 @@ border-bottom: 1px solid #ECECEC;
 }
 .page-wrap-link{
   display: block;
+  transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-wrap-link:focus,
 .page-wrap-link:hover{
@@ -511,6 +560,9 @@ border-bottom: 1px solid #ECECEC;
   font-family: inherit;
   border-radius: 4px;
   padding: 6px 22px;
+  transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list-btn{
   margin-bottom: 50px;
@@ -580,6 +632,7 @@ border-bottom: 1px solid #ECECEC;
 }
 .main-close-btn{
   position: absolute;
+  content: "";
     border-radius: 50% ;
     border: 1px solid #757575;
     background-color: transparent;
