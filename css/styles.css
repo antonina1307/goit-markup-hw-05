@@ -69,6 +69,28 @@ a.header-logo {
 .nav-list-item:not(:last-child){
   margin-right: 50px;
 }
+.nav-list-item{
+  position: relative;
+  display: block;
+  text-decoration:none;  
+}
+.nav-list-item::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  opacity: 0;
+  transition :opacity  250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-list-item:hover::after{
+  display: block;
+  opacity: 1;
+}
 .nav-list .site-nav{
   display: block;
   padding-top: 32px;
@@ -97,8 +119,12 @@ a.header-logo {
 .site-nav-act{
   color: var(--accent-color)
 }
-.link-page-mail{
+.link-page-mail,
+.link-page-tel{
+  position: relative;
   padding-right: 40px;
+  padding-top: 32px;
+    padding-bottom: 32px;
 }
 a.link-page-tel,
 a.link-page-mail {
@@ -122,6 +148,41 @@ a.link-page-mail {
 .address-list-item:focus{
   color: var(--accent-color);
   fill: var(--accent-color);
+}
+.link-page-mail::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-page-mail:hover::after {
+  display: block;
+  opacity: 1;
+}
+.link-page-tel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-page-tel:hover::after {
+  display: block;
+  opacity: 1;
 }
 .address-mail{
   width: 16px;
@@ -203,7 +264,7 @@ a.link-page-mail {
 
 .visually-hidden {
   position: absolute;
-  content: "";
+  content: '';
   width: 1px;
   height: 1px;
   margin: 1px;
@@ -280,7 +341,7 @@ display: flex;
 
 .sub-work-item{
   position: absolute;
-  content: "";
+  content: '';
   width: 370px;
   height: 70px;
   color: var(--primary-white-color);
@@ -519,19 +580,49 @@ border-bottom: 1px solid #ECECEC;
 .page-styles { 
   list-style: none; 
   
+  
 }
 .page-wrap{
  flex-basis: calc(100%/3 - 30px);
   margin-top: 30px;
   margin-left: 30px;
-  
-
 }
+
 .page-wrap-link{
+  position: relative;
   display: block;
   transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.page-wrap-link::after{
+  position: absolute;
+  font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;  
+    letter-spacing: 0.03em;  
+    color: #FFFFFF;
+    padding: 63px 24px;   
+  content: 'Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.';  
+  width: 370px;
+  height: 294px;
+  opacity: 0.8;
+  background-color: var(--accent-color);
+  top: 0 ;
+  
+  transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(150%); 
+      
+}
+.page-wrap-link:hover::after {  
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
 }
 .page-wrap-link:focus,
 .page-wrap-link:hover{
@@ -619,7 +710,7 @@ border-bottom: 1px solid #ECECEC;
 }
 .modal{
   position: absolute;
-  content:"";
+  content:'';
     width: 528px;
     height: 581px;
     left: 50%;
@@ -632,7 +723,7 @@ border-bottom: 1px solid #ECECEC;
 }
 .main-close-btn{
   position: absolute;
-  content: "";
+  content: '';
     border-radius: 50% ;
     border: 1px solid #757575;
     background-color: transparent;
